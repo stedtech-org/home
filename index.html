@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StedTech</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+            padding: 15px 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .head-img {
+            width: 200px; /* ロゴの幅を調整 */
+            height: auto;
+        }
+        .main {
+            padding: 100px 20px 20px; /* ヘッダーの高さを考慮してパディングを調整 */
+            background-color: #f9f9f9;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+        }
+        .top {
+            position: relative;
+            text-align: center;
+            margin-top: 60px; /* ヘッダーが固定されるためのマージンを追加 */
+        }
+        .top-img {
+            width: 50%;
+            height: auto;
+            z-index: 0;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .section p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .section ul {
+            padding-left: 20px;
+        }
+        .section ul li {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+              /*.siteを書き換える*/
+    .home{
+    opacity: 0; 
+    transform: translateY(100px); 
+    transition: opacity 0.5s, transform 0.5s; 
+    }
+    .about{
+    opacity: 0; 
+    transform: translateY(100px); 
+    transition: opacity 0.5s, transform 0.5s; 
+    }
+        .services{
+    opacity: 0; 
+    transform: translateY(100px); 
+    transition: opacity 0.5s, transform 0.5s; 
+    }
+        .link{
+    opacity: 0; 
+    transform: translateY(100px); 
+    transition: opacity 0.5s, transform 0.5s; 
+    }
+        
+    </style>
+</head>
+<body>
+<header>
+    <div class="header">
+        <img class="head-img" src="img/StedTech.png" alt="StedTech Logo">
+        <nav>
+            <ul>
+                <li><a id="nav-home">Home</a></li>
+                <li><a id="nav-about">About</a></li>
+                <li><a id="nav-cont">Activity content</a></li>
+                <li><a id="nav-link">Link</a></li>
+                <li><a href="news/index.html">News</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="top">
+    <img class="top-img" src="img/StedTech.gif" alt="Background Image">
+</div>
+<div class="main" id="main">
+    <div id="home" class="section home">
+        <h2>StedTechグループ</h2>
+        <p>StedTech</p>
+        <p>StedMusic</p>
+        <p>学校法人進定学園(架空校)</p>
+    </div>
+    <div id="about" class="section about">
+        <h2>About StedTech</h2>
+        <p>StedTechはLearn&Enjoyをスローガンにプログラミングや電子工作・動画制作など幅広いことを行っている技術チームです。</p>
+        <p>チームのメンバーは全員学生で、好きなことを好きな時にやっています。</p>
+    </div>
+    <div id="services" class="section services">
+        <h2>Activity content</h2>
+        <ul>
+            <li><strong>Webサイト制作:</strong> Webサイトの制作・JavaScriptライブラリの公開などを行っています。</li>
+            <li><strong>ゲーム制作:</strong> 気まぐれで変なゲーム作ってます。</li>
+            <li><strong>Scratch:</strong>いろいろなプロジェクトを作ってます。</li>
+            <li><strong>Qiita:</strong> エンジニアの交流サイト Qiitaで記事の投稿を行っています。</li>
+            <li><strong>動画制作:</strong> 暇動画・自作ゲームのPVなどを作っています。</li>
+        </ul>
+    </div>
+    <div id="contact" class="section link">
+        <h2>Link</h2>
+        <p>Qiita:<a href="https://qiita.com/organizations/stedtech">StedTech</a></p>
+        <p>Scratch:<a href="https://scratch.mit.edu/studios/34899933/">StedScratchStudio</a></p>
+    </div>
+</div>
+<footer>
+    <p>StedTech Organization: Learn & Enjoy</p>
+    <p>&copy; 2024 StedTech. All rights reserved.</p>
+</footer>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("#nav-home").click(function() {
+            
+            $("html, body").animate({
+                scrollTop: $("#home").offset().top - 300
+            }, 1000); 
+           
+            return false;
+        });
+         $("#nav-about").click(function() {
+            
+            $("html, body").animate({
+                scrollTop: $("#about").offset().top - 300
+            }, 1000); 
+           
+            return false;
+        });
+         $("#nav-cont").click(function() {
+            
+            $("html, body").animate({
+                scrollTop: $("#services").offset().top - 300
+            }, 1000); 
+           
+            return false;
+        });
+         $("#nav-link").click(function() {
+            
+            $("html, body").animate({
+                scrollTop: $("#contact").offset().top - 300
+            }, 1000); 
+           
+            return false;
+        });
+        
+        $(window).scroll(function() {
+        var element = $(".home");//InputClassName
+        var scrollPosition = $(window).scrollTop() + $(window).height();
+        var elementPosition = element.offset().top;
+        if (scrollPosition > elementPosition) {
+            element.css({
+                "opacity": "1", 
+                "transform": "translateY(0)" 
+            });
+        }
+         if (scrollPosition < elementPosition) {
+            element.css({
+                "opacity": "0", 
+                "transform": "translateY(100px)" 
+            });
+        }
+    });
+        $(window).scroll(function() {
+        var element = $(".about");//InputClassName
+        var scrollPosition = $(window).scrollTop() + $(window).height();
+        var elementPosition = element.offset().top;
+        if (scrollPosition > elementPosition) {
+            element.css({
+                "opacity": "1", 
+                "transform": "translateY(0)" 
+            });
+        }
+         if (scrollPosition < elementPosition) {
+            element.css({
+                "opacity": "0", 
+                "transform": "translateY(100px)" 
+            });
+        }
+    });
+       $(window).scroll(function() {
+        var element = $(".services");//InputClassName
+        var scrollPosition = $(window).scrollTop() + $(window).height();
+        var elementPosition = element.offset().top;
+        if (scrollPosition > elementPosition) {
+            element.css({
+                "opacity": "1", 
+                "transform": "translateY(0)" 
+            });
+        }
+         if (scrollPosition < elementPosition) {
+            element.css({
+                "opacity": "0", 
+                "transform": "translateY(100px)" 
+            });
+        }
+    }); 
+          $(window).scroll(function() {
+        var element = $(".link");//InputClassName
+        var scrollPosition = $(window).scrollTop() + $(window).height();
+        var elementPosition = element.offset().top;
+        if (scrollPosition > elementPosition) {
+            element.css({
+                "opacity": "1", 
+                "transform": "translateY(0)" 
+            });
+        }
+         if (scrollPosition < elementPosition) {
+            element.css({
+                "opacity": "0", 
+                "transform": "translateY(100px)" 
+            });
+        }
+    }); 
+    </script>
+</body>
+</html>
