@@ -61,10 +61,9 @@
             text-align: center;
             margin-top: 60px; /* ヘッダーが固定されるためのマージンを追加 */
         }
-        .top-img {
-            width: 50%;
-            height: auto;
-            z-index: 0;
+        #img-list{
+            font-size: 25px;
+            color: #808080;
         }
         .section {
             margin-bottom: 40px;
@@ -129,13 +128,15 @@
                 <li><a id="nav-cont">Activity content</a></li>
                 <li><a id="nav-div">Division</a></li>
                 <li><a id="nav-link">Link</a></li>
-                <li><a href="https://stedtech-org.github.io/news">News</a></li>
+                <li><a href="news/index.html">News</a></li>
+                <li><a href="lic/index.html">License</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <div class="top">
-    <img class="top-img" src="img/StedTech.gif" alt="Background Image">
+    <img id="top-img" class="top-img" src="img/stedx2.png" alt="Background Image" style="width: 70%;height: auto;z-index: 0;">
+    <div id="img-list"><span id="spanone" style="color: black;">●</span><span id="spantwo">●</span></div>
 </div>
 <div class="main" id="main">
     <div id="home" class="section home">
@@ -161,12 +162,13 @@
     </div>
     <div id="div" class="section div">
         <h2>Division</h2>
+        <p>Admin div.(運営)</p>
         <p>GameCreate div.(ゲーム制作)</p>
         <p>VideoCreate div.(動画制作)</p>
         <p>Engineering div.(プログラミング・電子工作)</p>
         <p>Security div.(セキュリティ・Kali Linux)</p>
         <p>Public relations div.(広報)</p>
-        <p>Minecraft div. (Minecraft Mod開発・リソースパック制作・プラグインサーバー運営)</p>
+        <p>Minecraft div. (Minecraft Mod開発・リソースパック制作・サーバー運営)</p>
     </div>
     <div id="contact" class="section link">
         <h2>Link</h2>
@@ -307,6 +309,42 @@
             });
         }
     }); 
+        //スライドショー
+        
+        const pics_src = ["img/stedx2.png","img/stednew.png"];
+let num = -1;
+const indicators = [document.getElementById("spanone"), document.getElementById("spantwo")];
+
+
+        function updateIndicators() {
+    indicators.forEach((indicator, index) => {
+        if (index === num) {
+            indicator.style.color = "black"; // アクティブな画像の場合
+        } else {
+            indicator.style.color = "#808080"; // 非アクティブな画像の場合
+        }
+    });
+}
+        
+function slideshow_timer(){
+ if (num === 1){
+      num = 0;
+  } else {
+    num ++;
+  }
+  document.getElementById("top-img").src = pics_src[num];
+    updateIndicators();
+}
+
+        indicators.forEach((indicator, index) => {
+    indicator.addEventListener("click", function() {
+        num = index; // クリックされたインジケーターのインデックスに切替
+        document.getElementById("top-img").src = pics_src[num];
+        updateIndicators(); // インジケーターのスタイルを更新
+    });
+});
+        
+setInterval(slideshow_timer, 6000);
     </script>
 </body>
 </html>
