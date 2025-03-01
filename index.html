@@ -3,9 +3,8 @@
 <head>
     <title>StedTech</title>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="aSPhRdY1YSaUw_K2OqS8wYEMcX94dVEl4TxcgA63quc" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="img/logo.png" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -129,15 +128,15 @@
                 <li><a id="nav-cont">Activity content</a></li>
                 <li><a id="nav-div">Division</a></li>
                 <li><a id="nav-link">Link</a></li>
-                <li><a href="news/index.html">News</a></li>
+                <li><a href="https://stedtech-org.github.io/news">News</a></li>
                 <li><a href="lic/index.html">License</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <div class="top">
-    <img id="top-img" class="top-img" src="img/stedx2.png" alt="Background Image" style="width: 70%;height: auto;z-index: 0;">
-    <div id="img-list"><span id="spanone" style="color: black;">●</span><span id="spantwo">●</span></div>
+    <img id="top-img" class="top-img" src="img/stedqiita2.png" alt="Background Image" style="width: 70%;height: auto;z-index: 0;">
+    <div id="img-list"><span id="spanone" style="color: black; margin-right: 10px;">●</span><span id="spantwo" style="margin-right: 10px;">●</span><span id="spantree" >●</span></div>
 </div>
 <div class="main" id="main">
     <div id="home" class="section home">
@@ -180,7 +179,7 @@
 </div>
 <footer>
     <p>StedTech Organization: Learn & Enjoy</p>
-    <p>&copy; 2024 StedTech. All rights reserved.</p>
+    <p>&copy; 2024 StedTechOrganization. All rights reserved.</p>
 </footer>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
@@ -310,11 +309,25 @@
             });
         }
     }); 
-        //スライドショー
+
+//スライドショー
+
+        //最新の画像を前に出すようにお願いします。
+
+
+        let num = -1;
         
-        const pics_src = ["img/stedx2.png","img/stednew.png"];
-let num = -1;
-const indicators = [document.getElementById("spanone"), document.getElementById("spantwo")];
+        const pics_src = [
+            "img/stedqiita2.png",
+            "img/stedx2.png",
+            "img/stednew.png"
+        ];
+        
+        const indicators = [
+            document.getElementById("spanone"), 
+            document.getElementById("spantwo"),
+            document.getElementById("spantree")
+        ];
 
 
         function updateIndicators() {
@@ -328,7 +341,7 @@ const indicators = [document.getElementById("spanone"), document.getElementById(
 }
         
 function slideshow_timer(){
- if (num === 1){
+ if (num === 2){
       num = 0;
   } else {
     num ++;
@@ -343,9 +356,21 @@ function slideshow_timer(){
         document.getElementById("top-img").src = pics_src[num];
         updateIndicators(); // インジケーターのスタイルを更新
     });
+    
+});
+        
+    document.getElementById("top-img").addEventListener("click", function() {
+
+    if (num === -1 || num === 0){
+        window.open("https://qiita.com/organizations/stedtech");
+    }
+    if (num === 1){
+        window.open("https://x.com/stedtechorg");
+    }
 });
         
 setInterval(slideshow_timer, 6000);
+    
     </script>
 </body>
 </html>
