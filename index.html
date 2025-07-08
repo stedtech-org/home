@@ -11,7 +11,9 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            background-color: #f4f4f4;
         }
+
         header {
             background-color: rgba(255, 255, 255, 0.8);
             color: #000;
@@ -23,136 +25,146 @@
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
+
         nav ul li {
             display: inline;
             margin-right: 20px;
         }
+
         nav ul li a {
             color: black;
             text-decoration: none;
             font-weight: bold;
             cursor: default;
         }
+
         nav ul li a:hover {
             text-decoration: underline;
         }
-        .head-img {
-            width: 200px; /* ロゴの幅を調整 */
+
+          .head-img {
+            width: 200px;
             height: auto;
         }
+
         .main {
-            padding: 100px 20px 20px; /* ヘッダーの高さを考慮してパディングを調整 */
-            background-color: #f9f9f9;
+            padding: 100px 5% 60px;
+            background: linear-gradient(to bottom, #f4f4f4, #ffffff);
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        footer {
-    background-color: #000; /* 黒背景 */
-    padding: 30px 20px;
-    font-size: 14px;
-    color: #fff; /* 白文字 */
-}
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
-}
+        .section {
+            background-color: #ffffff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.footer-logo {
-    width: 160px;
-    height: auto;
-    margin-bottom: 20px;
-    margin-left: 1%;
-}
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
 
-.footer-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
+        .section h2 {
+            margin-top: 0;
+            font-size: 1.8em;
+            color: #222;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
 
-.footer-nav li {
-    margin-bottom: 8px;
-    margin-left: 3%;
-}
+        .section p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 15px;
+        }
 
-.footer-nav a {
-    color: #fff;
-    text-decoration: none;
-    cursor: default;
-}
+        .section ul {
+            padding-left: 20px;
+        }
 
-.footer-nav a:hover {
-    text-decoration: underline;
-}
+        .section ul li {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #555;
+            list-style: disc;
+        }
 
-.footer-copy {
-    color: #ccc;
-}
-
-        .top {
+          .top {
             position: relative;
             text-align: center;
-            margin-top: 60px; /* ヘッダーが固定されるためのマージンを追加 */
+            margin-top: 120px; /* ヘッダーが固定されるためのマージンを追加 */
         }
         #img-list{
             font-size: 25px;
             color: #808080;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .section h2 {
-            margin-top: 0;
-            color: #333;
-        }
-        .section p {
-            color: #666;
-            margin-bottom: 10px;
-        }
-        .section ul {
-            padding-left: 20px;
-        }
-        .section ul li {
-            margin-bottom: 10px;
-            color: #666;
+            cursor: default;
         }
 
-              /*.siteを書き換える*/
-    .home{
-    opacity: 0; 
-    transform: translateY(100px); 
-    transition: opacity 0.5s, transform 0.5s; 
-    }
-    .about{
-    opacity: 0; 
-    transform: translateY(100px); 
-    transition: opacity 0.5s, transform 0.5s; 
-    }
-        .services{
-    opacity: 0; 
-    transform: translateY(100px); 
-    transition: opacity 0.5s, transform 0.5s; 
-    }
-        .link{
-    opacity: 0; 
-    transform: translateY(100px); 
-    transition: opacity 0.5s, transform 0.5s; 
-    }
-             .div{
-    opacity: 0; 
-    transform: translateY(100px); 
-    transition: opacity 0.5s, transform 0.5s; 
-    }
-        
+        footer {
+            background-color: #000;
+            padding: 30px 20px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .footer-logo {
+            width: 160px;
+            height: auto;
+            margin-bottom: 20px;
+            margin-left: 1%;
+        }
+
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .footer-nav li {
+            margin-bottom: 8px;
+            margin-left: 3%;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            cursor: default;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-copy {
+            color: #ccc;
+        }
+
+        /* Animation (unchanged) */
+        .home, .about, .services, .link, .div {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
     </style>
 </head>
 <body>
@@ -172,15 +184,21 @@
         </nav>
     </div>
 </header>
+
 <div class="top">
-    <img id="top-img" class="top-img" src="img/stedqiita2.png" alt="Background Image" style="width: 70%;height: auto;z-index: 0;">
-    <div id="img-list"><span id="spanone" style="color: black; margin-right: 10px;">●</span><span id="spantwo" style="margin-right: 10px;">●</span><span id="spantree" >●</span></div>
+    <img id="top-img" class="top-img" src="img/stedqiita2.png" alt="Background Image" style="width: 70%; height: auto; z-index: 0;">
+    <div id="img-list">
+        <span id="spanone" style="color: black; margin-right: 10px;">●</span>
+        <span id="spantwo" style="margin-right: 10px;">●</span>
+        <span id="spantree">●</span>
+    </div>
 </div>
+
 <div class="main" id="main">
     <div id="home" class="section home">
-        <h2>StedTechGroup</h2>
-        <p>StedTech</p>
-        <p>進定学園(架空校 お遊びで作ったアタオカな学校)</p>
+        <h2>StedTech</h2>
+        <p>We are StedTechOrganization</p>
+        <p>Learn&Enjoy</p>
     </div>
     <div id="about" class="section about">
         <h2>About StedTech</h2>
@@ -209,12 +227,25 @@
         <p>Minecraft div. (Minecraft Mod開発・リソースパック制作・サーバー運営)</p>
     </div>
     <div id="contact" class="section link">
-        <h2>Link</h2>
-        <p>Qiita:<a href="https://qiita.com/organizations/stedtech">StedTech</a></p>
-        <p>HP:<a href="https://stedtech-org.github.io/home">HomePage</a></p>
-        <p>X(旧Twitter)<a href="https://x.com/stedtechorg">@stedtechorg</a></p>
+    <h2>Link</h2>
+    <div style="display: flex; justify-content: center; gap: 40px; align-items: center; flex-wrap: wrap; margin-bottom: 20px;">
+        <a href="https://qiita.com/organizations/stedtech" target="_blank" style="text-align: center;">
+            <img src="img/qiita-icon.png" alt="Qiita" style="width: 45px;"><br>
+            <span style="font-size: 0.9rem; color: #333;">Qiita</span>
+        </a>
+        <a href="https://x.com/stedtechorg" target="_blank" style="text-align: center;">
+            <img src="img/x.png" alt="X" style="width: 45px;"><br>
+            <span style="font-size: 0.9rem; color: #333;">X</span>
+        </a>
+        <a href="https://stedtech-org.github.io/home" target="_blank" style="text-align: center;">
+            <img src="img/StedTech.png" alt="Homepage" style="height: 45px;"><br>
+            <span style="font-size: 0.9rem; color: #333;">HP</span>
+        </a>
     </div>
 </div>
+
+</div>
+
 <footer>
     <div class="footer-container">
         <img src="img/StedTech.png" alt="StedTech Logo" class="footer-logo">
@@ -231,10 +262,9 @@
     </div>
 </footer>
 
-
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(".nav-home").click(function() {
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(".nav-home").click(function() {
             
             $("html, body").animate({
                 scrollTop: $("#home").offset().top - 300
@@ -421,7 +451,6 @@ function slideshow_timer(){
 });
         
 setInterval(slideshow_timer, 6000);
-    
-    </script>
+</script>
 </body>
 </html>
