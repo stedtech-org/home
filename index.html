@@ -36,6 +36,7 @@
             color: black;
             text-decoration: none;
             font-weight: bold;
+            cursor: default;
         }
         nav ul li a:hover {
             text-decoration: underline;
@@ -49,13 +50,50 @@
             background-color: #f9f9f9;
         }
         footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-            bottom: 0;
-        }
+    background-color: #000; /* 黒背景 */
+    padding: 30px 20px;
+    font-size: 14px;
+    color: #fff; /* 白文字 */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-logo {
+    width: 160px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: 1%;
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.footer-nav li {
+    margin-bottom: 8px;
+    margin-left: 3%;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    cursor: default;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    color: #ccc;
+}
+
         .top {
             position: relative;
             text-align: center;
@@ -123,11 +161,11 @@
         <a href="https://stedtech-org.github.io/home"><img class="head-img" src="img/StedTech.png" alt="StedTech Logo"></a>
         <nav>
             <ul>
-                <li><a id="nav-home">Home</a></li>
-                <li><a id="nav-about">About</a></li>
-                <li><a id="nav-cont">Activity content</a></li>
-                <li><a id="nav-div">Division</a></li>
-                <li><a id="nav-link">Link</a></li>
+                <li><a class="nav-home">Home</a></li>
+                <li><a class="nav-about">About</a></li>
+                <li><a class="nav-cont">Activity content</a></li>
+                <li><a class="nav-div">Division</a></li>
+                <li><a class="nav-link">Link</a></li>
                 <li><a href="https://stedtech-org.github.io/news">News</a></li>
                 <li><a href="lic/index.html">License</a></li>
             </ul>
@@ -178,12 +216,25 @@
     </div>
 </div>
 <footer>
-    <p>StedTech Organization: Learn & Enjoy</p>
-    <p>&copy; 2024-2025 StedTechOrganization. All rights reserved.</p>
+    <div class="footer-container">
+        <img src="img/StedTech.png" alt="StedTech Logo" class="footer-logo">
+        <ul class="footer-nav">
+            <li><a class="nav-home">Home</a></li>
+            <li><a class="nav-about">About</a></li>
+            <li><a class="nav-cont">Activity content</a></li>
+            <li><a class="nav-div">Division</a></li>
+            <li><a class="nav-link">Link</a></li>
+            <li><a href="https://stedtech-org.github.io/news">News</a></li>
+            <li><a href="lic/index.html">License</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2024-2025 StedTech Organization. All rights reserved.</p>
+    </div>
 </footer>
+
+
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $("#nav-home").click(function() {
+        $(".nav-home").click(function() {
             
             $("html, body").animate({
                 scrollTop: $("#home").offset().top - 300
@@ -191,7 +242,7 @@
            
             return false;
         });
-         $("#nav-about").click(function() {
+         $(".nav-about").click(function() {
             
             $("html, body").animate({
                 scrollTop: $("#about").offset().top - 300
@@ -199,7 +250,7 @@
            
             return false;
         });
-         $("#nav-cont").click(function() {
+         $(".nav-cont").click(function() {
             
             $("html, body").animate({
                 scrollTop: $("#services").offset().top - 300
@@ -207,7 +258,7 @@
            
             return false;
         });
-         $("#nav-link").click(function() {
+         $(".nav-link").click(function() {
             
             $("html, body").animate({
                 scrollTop: $("#contact").offset().top - 300
@@ -215,7 +266,7 @@
            
             return false;
         });
-         $("#nav-div").click(function() {
+         $(".nav-div").click(function() {
             
             $("html, body").animate({
                 scrollTop: $("#div").offset().top - 300
