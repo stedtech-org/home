@@ -428,17 +428,19 @@ window.addEventListener("load", function(){
                 <li><a class="nav-link">Link</a></li>
                 <li><a href="https://stedtech-org.github.io/news">News</a></li>
                 <li><a href="lic/index.html">License</a></li>
+                <li><a href="https://suzuri.jp/stedtechorg">Store</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
 <div class="top">
-    <img id="top-img" class="top-img" src="img/stedqiita2.png" alt="Background Image" style="width: 70%; height: auto; z-index: 0;">
+    <img id="top-img" class="top-img" src="img/STST.png" alt="Background Image" style="width: 70%; height: auto; z-index: 0;">
     <div id="img-list">
         <span id="spanone" style="color: black; margin-right: 10px;">●</span>
         <span id="spantwo" style="margin-right: 10px;">●</span>
-        <span id="spantree">●</span>
+        <span id="spantree"style="margin-right: 10px;">●</span>
+        <span id="spanfour">●</span>
     </div>
 </div>
 
@@ -484,7 +486,7 @@ window.addEventListener("load", function(){
             <img src="img/x.png" alt="X">
         </a>
         <a href="https://suzuri.jp/stedtechorg" target="_blank" class="link-card">
-            <img src="img/StedTech.png" alt="shop">
+            <img src="img/suzuri.png" alt="shop">
         </a>
     </div>
 </div>
@@ -574,6 +576,7 @@ $(window).on("scroll load", function() {
         let num = -1;
         
         const pics_src = [
+            "img/STST.png",
             "img/stedqiita2.png",
             "img/stedx2.png",
             "img/stednew.png"
@@ -582,7 +585,8 @@ $(window).on("scroll load", function() {
         const indicators = [
             document.getElementById("spanone"), 
             document.getElementById("spantwo"),
-            document.getElementById("spantree")
+            document.getElementById("spantree"),
+            document.getElementById("spanfour")
         ];
 
 
@@ -597,7 +601,7 @@ $(window).on("scroll load", function() {
 }
         
 function slideshow_timer(){
- if (num === 2){
+ if (num === 3){
       num = 0;
   } else {
     num ++;
@@ -618,9 +622,12 @@ function slideshow_timer(){
     document.getElementById("top-img").addEventListener("click", function() {
 
     if (num === -1 || num === 0){
-        window.open("https://qiita.com/organizations/stedtech");
+        window.open("https://suzuri.jp/stedtechorg");
     }
     if (num === 1){
+        window.open("https://qiita.com/organizations/stedtech");
+    }
+    if (num === 2){
         window.open("https://x.com/stedtechorg");
     }
 });
