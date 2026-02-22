@@ -3,7 +3,8 @@ $(".nav-home").click(function() {
             $("html, body").animate({
                 scrollTop: $("#home").offset().top - 30
             }, 1000); 
-           
+            close();
+
             return false;
         });
          $(".nav-about").click(function() {
@@ -11,7 +12,7 @@ $(".nav-home").click(function() {
             $("html, body").animate({
                 scrollTop: $("#about").offset().top - 30
             }, 1000); 
-           
+            close();
             return false;
         });
          $(".nav-cont").click(function() {
@@ -19,7 +20,7 @@ $(".nav-home").click(function() {
             $("html, body").animate({
                 scrollTop: $("#services").offset().top - 30
             }, 1000); 
-           
+            close();
             return false;
         });
          $(".nav-link").click(function() {
@@ -27,7 +28,7 @@ $(".nav-home").click(function() {
             $("html, body").animate({
                 scrollTop: $("#contact").offset().top - 30
             }, 1000); 
-           
+            close();
             return false;
         });
          $(".nav-div").click(function() {
@@ -35,7 +36,7 @@ $(".nav-home").click(function() {
             $("html, body").animate({
                 scrollTop: $("#div").offset().top - 30
             }, 1000); 
-           
+            close();
             return false;
         });
         $(window).scroll(function(){
