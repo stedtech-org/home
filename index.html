@@ -5,394 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/logo.png" type="image/png">
-    <style>
-        html, body {
-    overflow-x: hidden; /* 横スクロールを禁止 */
-}
-
-        /* 全体 */
-body {
-    font-family: 'Inter', sans-serif; /* モダンなフォント */
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f8f9fa;
-    color: #212529;
-    scroll-behavior: smooth;
-}
-
-/* ヘッダー */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.85); /* 半透明 */
-    backdrop-filter: blur(12px); /* 背景を少しぼかす */
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background 0.3s ease, padding 0.3s ease;
-    font-family: 'Inter', sans-serif;
-}
-
-/* スクロールでヘッダーを少し縮める場合 */
-header.scrolled {
-    padding: 5px 40px;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 30px rgba(0,0,0,0.12);
-}
-
-header .head-img {
-    height: 45px;
-    transition: transform 0.3s;
-}
-header .head-img:hover {
-    transform: scale(1.05);
-}
-
-nav ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #212529;      /* 基本色 */
-    font-weight: 600;     /* 少し太め */
-    font-size: 1rem;      /* 少し大きめ */
-    padding: 8px 12px;    /* 十分なクリック範囲 */
-    border-radius: 6px;   /* 角丸で柔らかい印象 */
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-
-nav ul li a::after {
-    content: '';
-    display: block;
-    height: 2px;
-    background: #6c63ff; /* アクセントカラー */
-    width: 0;
-    transition: width 0.3s ease;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-}
-
-nav ul li a:hover {
-    color: #6c63ff;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-
-/* ナビゲーション */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #212529;
-    font-weight: 500;
-    position: relative;
-    padding: 5px 0;
-    cursor: pointer;
-}
-
-nav ul li a::after {
-    content: '';
-    display: block;
-    height: 2px;
-    background: #6c63ff; /* アクセントカラー */
-    transition: width 0.3s;
-    width: 0;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-/* メイン */
-.main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 120px 20px 60px;
-    display: grid;
-    gap: 40px;
-}
-
-/* セクション共通 */
-.section {
-    position: relative;
-    width: 100%;
-    padding: 100px 10%;
-    overflow: hidden;
-    color: #fff;
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%); /* 下部を斜めにカット */
-    transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
-/* ホバーで少しズーム */
-.section:hover {
-    transform: scale(1.02);
-}
-
-/* 背景色やグラデーションを個別に設定 */
-/* 背景色やグラデーションを個別に設定（青系で統一） */
-.section.home,
-.section.about,
-.section.services,
-.section.div {
-    background: linear-gradient(135deg, #4a90e2, #50c0f0); /* 明るい青系グラデーション */
-    color: #fff; /* 白文字 */
-}
-.section.link {
-    background: #ffffff; /* 白ベース */
-    color: #212529;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-/* テキスト */
-.section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: inherit;
-}
-.section p, .section ul li {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: inherit;
-}
-
-/* リストマーカーはアクセント色に */
-.section ul li::marker {
-    color: rgba(255,255,255,0.9);
-    font-weight: bold;
-}
-
-/* Link セクション内リンクの調整 */
-.section.link a span {
-    color: #6c63ff;
-}
-
-/* パララックス感の演出（スクロールで少し移動） */
-@media (min-width: 768px) {
-    .section[data-speed] {
-        transform: translateY(0);
-    }
-}
-
-/* Link セクション全体 */
-.section.link {
-    background: #a6c5ff;
-    color: #212529;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-}
-
-.section.link h2 {
-    background: linear-gradient(135deg, #4a90e2, #50c0f0); 
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-
-/* リンクカードコンテナ */
-.link-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-/* 個別リンクカード */
-.link-card {
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    padding: 25px 20px;
-    width: 140px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.link-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
-
-/* アイコン */
-.link-card img {
-    width: auto;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-/* レスポンシブ */
-@media (max-width: 768px) {
-    .link-cards {
-        gap: 20px;
-    }
-    .link-card {
-        width: 120px;
-        padding: 20px 15px;
-    }
-}
-
-
-/* トップイメージ */
-.top {
-    position: relative;
-    text-align: center;
-    margin-top: 120px;
-}
-
-.top-img {
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.top-img:hover {
-    transform: scale(1.02);
-}
-
-/* インジケーター */
-#img-list span {
-    font-size: 10px;
-    color: #adb5bd;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-#img-list span.active {
-    color: #6c63ff;
-}
-
-/* フッター全体 */
-footer {
-    background-color: #212529;
-    color: #f8f9fa;
-    padding: 40px 20px;
-}
-
-/* フッター内コンテナ */
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column; /* 縦方向に並べる */
-    align-items: flex-start; /* 左揃え */
-    gap: 20px;
-}
-
-/* フッターロゴ */
-.footer-logo {
-    height: 50px;
-}
-
-/* フッターナビ */
-.footer-nav {
-    display: flex;
-    flex-direction: column; /* 縦並び */
-    gap: 10px;
-    padding: 0;
-    list-style: none;
-}
-
-.footer-nav a {
-    color: #f8f9fa;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.footer-nav a:hover {
-    color: #6c63ff;
-}
-
-/* コピーライト */
-.footer-copy {
-    color: #adb5bd;
-}
-
-
-/* アニメーション */
-/* 初期状態：左右にオフセット */
-.home, .about, .services, .link, .div {
-    opacity: 0;
-    transform: translateX(100px); /* 左からスライド */
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-/* スクロールで表示時 */
-.section.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* スプラッシュ全体 */
-#splash {
-  position: fixed;
-  top:0; left:0;
-  width:100%;
-  height:100%;
-  background:linear-gradient(135deg, rgb(25, 112, 212), #86bdd4);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:2000;
-  overflow:hidden;
-}
-
-/* ロゴ */
-.splash-logo {
-  width:150px;
-  animation: logo-zoom 2s ease forwards;
-  z-index:3; /* ロゴを上に */
-}
-
-@keyframes logo-zoom {
-  0% { transform: scale(1); opacity: 0; }
-  20% { opacity: 1; }
-  100% { transform: scale(1.1); opacity: 1; }
-}
-
-/* 白丸 */
-.circle {
-  position:absolute;
-  top:50%; left:50%;
-  width:100px; /* 初期サイズ */
-  height:100px;
-  background:white;
-  border-radius:50%;
-  transform: translate(-50%, -50%) scale(0);
-  animation: circle-grow 2s ease 2s forwards; /* 2秒遅延 */
-  z-index:2; /* ロゴより下でもOK */
-}
-
-@keyframes circle-grow {
-  0% { transform: translate(-50%, -50%) scale(0); }
-  100% { transform: translate(-50%, -50%) scale(30); } /* 十分大きく */
-}
-
-    </style>
+    <link rel="stylesheet" href="style/index.css">
+    <meta name="theme-color" content="#1e90ff">
 </head>
 <body>
     <!-- スプラッシュ画面 -->
@@ -400,21 +14,6 @@ footer {
   <img src="img/StedTech.png" class="splash-logo" alt="Logo">
   <div class="circle"></div>
 </div>
-
-
-
-<script>
-window.addEventListener("load", function(){
-  setTimeout(() => {
-    const splash = document.getElementById("splash");
-    splash.style.transition = "opacity 0.5s";
-    splash.style.opacity = 0;
-    setTimeout(() => splash.remove(), 500);
-  }, 2350); // 合計4秒でスプラッシュ削除
-});
-
-</script>
-
 
 <header>
     <div class="header">
@@ -431,16 +30,21 @@ window.addEventListener("load", function(){
                 <li><a href="https://suzuri.jp/stedtechorg">Store</a></li>
             </ul>
         </nav>
+        <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
     </div>
 </header>
-
 <div class="top">
-    <img id="top-img" class="top-img" src="img/STST.png" alt="Background Image" style="width: 70%; height: auto; z-index: 0;">
+    <img id="top-img" class="top-img" src="img/26sted.png" alt="Background Image">
     <div id="img-list">
         <span id="spanone" style="color: black; margin-right: 10px;">●</span>
         <span id="spantwo" style="margin-right: 10px;">●</span>
         <span id="spantree"style="margin-right: 10px;">●</span>
-        <span id="spanfour">●</span>
+        <span id="spanfour"style="margin-right: 10px;">●</span>
+        <span id="spanfive">●</span>
     </div>
 </div>
 
@@ -461,7 +65,7 @@ window.addEventListener("load", function(){
             <li><strong>Webサイト制作:</strong> Webサイトの制作を行っています。</li>
             <li><strong>ゲーム制作:</strong> ゲームの製作を行っています。</li>
             <li><strong>広報:</strong> Qiitaで記事の投稿やXの運営などを行っています。</li>
-            <li><strong>動画制作:</strong> 動画・PVなどを制作してます。</li>
+            <li><strong>動画制作:</strong> 動画・PVなどを制作ます。</li>
             <li><strong>Minecraft:</strong> Mod開発やリソースパック制作 サーバー運営を行っています。</li>
         </ul>
     </div>
@@ -507,141 +111,14 @@ window.addEventListener("load", function(){
             <li><a href="https://stedtech-org.github.io/news">News</a></li>
             <li><a href="lic/index.html">License</a></li>
         </ul>
-        <p class="footer-copy">&copy; 2024-2025 StedTech Organization. All rights reserved.</p>
+        <p class="footer-copy">&copy; 2024-2026 StedTech Organization. All rights reserved.</p>
     </div>
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(".nav-home").click(function() {
-            
-            $("html, body").animate({
-                scrollTop: $("#home").offset().top - 30
-            }, 1000); 
-           
-            return false;
-        });
-         $(".nav-about").click(function() {
-            
-            $("html, body").animate({
-                scrollTop: $("#about").offset().top - 30
-            }, 1000); 
-           
-            return false;
-        });
-         $(".nav-cont").click(function() {
-            
-            $("html, body").animate({
-                scrollTop: $("#services").offset().top - 30
-            }, 1000); 
-           
-            return false;
-        });
-         $(".nav-link").click(function() {
-            
-            $("html, body").animate({
-                scrollTop: $("#contact").offset().top - 30
-            }, 1000); 
-           
-            return false;
-        });
-         $(".nav-div").click(function() {
-            
-            $("html, body").animate({
-                scrollTop: $("#div").offset().top - 30
-            }, 1000); 
-           
-            return false;
-        });
-        
-       // jQueryでスクロール時に .visible クラスを付与
-$(window).on("scroll load", function() {
-    $(".section").each(function() {
-        let top = $(this).offset().top;
-        let scroll = $(window).scrollTop() + $(window).height() * 0.8; 
-        if(scroll > top) {
-            $(this).addClass("visible");
-        } else {
-            $(this).removeClass("visible");
-        }
-    });
-});
-
-
-//スライドショー
-
-        //最新の画像を前に出すようにお願いします。
-
-
-        let num = -1;
-        
-        const pics_src = [
-            "img/STST.png",
-            "img/stedqiita2.png",
-            "img/stedx2.png",
-            "img/stednew.png"
-        ];
-        
-        const indicators = [
-            document.getElementById("spanone"), 
-            document.getElementById("spantwo"),
-            document.getElementById("spantree"),
-            document.getElementById("spanfour")
-        ];
-
-
-        function updateIndicators() {
-    indicators.forEach((indicator, index) => {
-        if (index === num) {
-            indicator.style.color = "black"; // アクティブな画像の場合
-        } else {
-            indicator.style.color = "#808080"; // 非アクティブな画像の場合
-        }
-    });
-}
-        
-function slideshow_timer(){
- if (num === 3){
-      num = 0;
-  } else {
-    num ++;
-  }
-  document.getElementById("top-img").src = pics_src[num];
-    updateIndicators();
-}
-
-        indicators.forEach((indicator, index) => {
-    indicator.addEventListener("click", function() {
-        num = index; // クリックされたインジケーターのインデックスに切替
-        document.getElementById("top-img").src = pics_src[num];
-        updateIndicators(); // インジケーターのスタイルを更新
-    });
-    
-});
-        
-    document.getElementById("top-img").addEventListener("click", function() {
-
-    if (num === -1 || num === 0){
-        window.open("https://suzuri.jp/stedtechorg");
-    }
-    if (num === 1){
-        window.open("https://qiita.com/organizations/stedtech");
-    }
-    if (num === 2){
-        window.open("https://x.com/stedtechorg");
-    }
-});
-        
-setInterval(slideshow_timer, 6000);
-
-$(window).scroll(function(){
-    if($(window).scrollTop() > 50){
-        $("header").addClass("scrolled");
-    } else {
-        $("header").removeClass("scrolled");
-    }
-});
-
-</script>
+<script src="js/splash.js"></script>
+<script src="js/phone.js"></script>
+<script src="js/scroll.js"></script>
+<script src="js/slide.js"></script>
 </body>
 </html>
