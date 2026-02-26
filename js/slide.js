@@ -34,7 +34,7 @@
 }
         
 function slideshow_timer(){
- if (num === 3){
+ if (num === 4){
       num = 0;
   } else {
     num ++;
