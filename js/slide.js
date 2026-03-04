@@ -7,6 +7,7 @@
         let num = -1;
         
         const pics_src = [
+            "img/sted3rd.png",
             "img/pendiv.png",
             "img/26sted.png",
             "img/STST.png",
@@ -21,7 +22,8 @@
             document.getElementById("spantree"),
             document.getElementById("spanfour"),
             document.getElementById("spanfive"),
-            document.getElementById("spansix")
+            document.getElementById("spansix"),
+            document.getElementById("spanseven")
         ];
 
 
@@ -36,7 +38,7 @@
 }
         
 function slideshow_timer(){
- if (num === 5){
+ if (num === 6){
       num = 0;
   } else {
     num ++;
@@ -59,13 +61,13 @@ function slideshow_timer(){
     if (num === -1 || num === 0){
         
     }
-    if (num === 2){
+    if (num === 3){
         window.open("https://suzuri.jp/stedtechorg");
     }
-    if (num === 3){
+    if (num === 4){
         window.open("https://qiita.com/organizations/stedtech");
     }
-    if (num === 4){
+    if (num === 5){
         window.open("https://x.com/stedtechorg");
     }
 });
