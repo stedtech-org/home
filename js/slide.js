@@ -59,16 +59,19 @@ function slideshow_timer(){
     document.getElementById("top-img").addEventListener("click", function() {
 
     if (num === -1 || num === 0){
-        
+        window.open("https://stedtech-org.github.io/news/item/2026/2/index.html");
+    }
+    if (num === 1){
+        window.open("https://stedtech-org.github.io/news/item/2026/1/index.html");
     }
     if (num === 3){
-        window.open("https://suzuri.jp/stedtechorg");
+        window.open("https://stedtech-org.github.io/news/item/2025/2/index.html");
     }
     if (num === 4){
         window.open("https://qiita.com/organizations/stedtech");
     }
     if (num === 5){
-        window.open("https://x.com/stedtechorg");
+        window.open("https://stedtech-org.github.io/news/item/2025/1/index.html");
     }
 });
         
