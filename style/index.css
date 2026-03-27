@@ -390,7 +390,20 @@ footer {
   100% { transform: translate(-50%, -50%) scale(30); } /* 十分大きく */
 }
 
- 
+@media (min-width: 769px) {
+
+    .footer-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .footer-group {
+        width: 30%;
+        min-width: 200px;
+        padding-left: 20px;
+    }
+} 
 
 /* ==========================================
    📱 MOBILE STYLE (max-width:768px)
