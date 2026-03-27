@@ -330,7 +330,10 @@ footer {
 .footer-copy {
     color: #adb5bd;
 }
-
+.cont-x{
+    width: 27px;
+    height: auto;
+}
 /* スプラッシュ全体 */
 #splash {
   position: fixed;
